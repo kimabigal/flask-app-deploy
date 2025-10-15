@@ -30,13 +30,13 @@ jobs:
         credentials_json: ${{ secrets.GKE_SA_KEY }}
 
     - name: Set GCP Project
-      run: gcloud config set project
+      run: gcloud config set project k8s-project-475118
 
     - name: Install gke-gcloud-auth-plugin
       run: gcloud components install gke-gcloud-auth-plugin
 
     - name: Get GKE credentials
-      run: 
+      run: gcloud container clusters get-credentials cluster-1 --region us-central1 
 
     - name: Log in to Docker Hub
       uses: docker/login-action@v1
