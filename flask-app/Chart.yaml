@@ -1,4 +1,3 @@
-
 apiVersion: v2
 name: flask-app
 description: A Helm chart for Kubernetes
